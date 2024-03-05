@@ -388,54 +388,6 @@ libs/googleapis/gens/google/cloud/dialogflow/v2beta1/webhook.pb.cc
 
 libfreeswitch_libgoogleapis_la_CPPFLAGS = -I/usr/local/include -I$(GOOGLEAPIS_GENS_PATH) -std=c++17  -pthread
 
-# nuance asr 
-NUANCE_GENS_PATH = libs/nuance-asr-grpc-api/stubs/
-
-nodist_libfreeswitch_libnuanceapis_la_SOURCES = \
-libs/nuance-asr-grpc-api/stubs/nuance/rpc/error_details.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/rpc/status_code.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/rpc/status.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/rpc/error_details.grpc.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/rpc/status_code.grpc.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/rpc/status.grpc.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/asr/v1/result.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/asr/v1/resource.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/asr/v1/recognizer.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/asr/v1/result.grpc.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/asr/v1/resource.grpc.pb.cc \
-libs/nuance-asr-grpc-api/stubs/nuance/asr/v1/recognizer.grpc.pb.cc 
-
-libfreeswitch_libnuanceapis_la_CPPFLAGS = -I/usr/local/include -I$(NUANCE_GENS_PATH) -std=c++17  -pthread
-
-#nvidia asr
-NVIDIA_GENS_PATH = libs/riva-asr-grpc-api/stubs/
-
-nodist_libfreeswitch_libnvidiaapis_la_SOURCES = \
-libs/riva-asr-grpc-api/stubs/riva/proto/riva_asr.pb.cc \
-libs/riva-asr-grpc-api/stubs/riva/proto/riva_audio.pb.cc \
-libs/riva-asr-grpc-api/stubs/riva/proto/riva_asr.grpc.pb.cc \
-libs/riva-asr-grpc-api/stubs/riva/proto/riva_audio.grpc.pb.cc 
-
-libfreeswitch_libnvidiaapis_la_CPPFLAGS = -I/usr/local/include -I$(NVIDIA_GENS_PATH) -std=c++17  -pthread
-
-#soniox asr
-SONIOX_GENS_PATH = libs/soniox-asr-grpc-api/stubs/
-
-nodist_libfreeswitch_libsonioxapis_la_SOURCES = \
-libs/soniox-asr-grpc-api/stubs/soniox/speech_service.pb.cc \
-libs/soniox-asr-grpc-api/stubs/soniox/speech_service.grpc.pb.cc
-
-libfreeswitch_libsonioxapis_la_CPPFLAGS = -I/usr/local/include -I$(SONIOX_GENS_PATH) -std=c++17  -pthread
-
-#cobalt asr
-COBALT_GENS_PATH = libs/cobalt-asr-grpc-api/stubs/
-
-nodist_libfreeswitch_libcobaltapis_la_SOURCES = \
-libs/cobalt-asr-grpc-api/stubs/cobaltspeech/transcribe/v5/transcribe.pb.cc \
-libs/cobalt-asr-grpc-api/stubs/cobaltspeech/transcribe/v5/transcribe.grpc.pb.cc
-
-libfreeswitch_libcobaltapis_la_CPPFLAGS = -I/usr/local/include -I$(COBALT_GENS_PATH) -I./libs/googleapis/gens -std=c++17  -pthread
-
 CORE_LIBS+=libfreeswitch_libgoogleapis.la libfreeswitch_libnuanceapis.la libfreeswitch_libnvidiaapis.la libfreeswitch_libsonioxapis.la libfreeswitch_libcobaltapis.la
 noinst_LTLIBRARIES += libfreeswitch_libgoogleapis.la libfreeswitch_libnuanceapis.la libfreeswitch_libnvidiaapis.la libfreeswitch_libsonioxapis.la libfreeswitch_libcobaltapis.la
 
