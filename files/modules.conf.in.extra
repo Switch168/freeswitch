@@ -56,8 +56,8 @@ applications/mod_spandsp
 #applications/mod_valet_parking
 #applications/mod_video_filter
 #applications/mod_vmd
-#applications/mod_voicemail
-#applications/mod_voicemail_ivr
+applications/mod_voicemail
+applications/mod_voicemail_ivr
 #asr_tts/mod_cepstral
 #asr_tts/mod_flite
 #asr_tts/mod_pocketsphinx
@@ -165,7 +165,7 @@ say/mod_say_en
 #timers/mod_posix_timer
 #timers/mod_timerfd
 xml_int/mod_xml_cdr
-#xml_int/mod_xml_curl
+xml_int/mod_xml_curl
 #xml_int/mod_xml_ldap
 #xml_int/mod_xml_radius
 #xml_int/mod_xml_rpc

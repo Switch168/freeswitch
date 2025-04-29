@@ -14,27 +14,27 @@ RUN for i in $(seq 1 8); do mkdir -p "/usr/share/man/man${i}"; done \
     libspeex-dev libspeexdsp-dev libedit-dev libtiff-dev yasm libswscale-dev haveged libre2-dev \
     libopus-dev libsndfile-dev libshout3-dev libmpg123-dev libmp3lame-dev libopusfile-dev libgoogle-perftools-dev \
     && export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib \
-		&& cd /tmp \
-		&& tar xvfz SpeechSDK-Linux-1.34.0.tar.gz \
-		&& cd SpeechSDK-Linux-1.34.0 \
-		&& ls -lrt /usr/local/lib/ \
-		&& cd /usr/local/src \
+    && cd /tmp \
+    && tar xvfz SpeechSDK-Linux-1.34.0.tar.gz \
+    && cd SpeechSDK-Linux-1.34.0 \
+    && ls -lrt /usr/local/lib/ \
+    && cd /usr/local/src \
     && git config --global http.postBuffer 524288000  \
-  	&& git config --global https.postBuffer 524288000 \
-		&& git config --global pull.rebase true \
-		&& git clone https://github.com/signalwire/freeswitch.git -b v1.10.10 \
-		&& git clone https://github.com/warmcat/libwebsockets.git -b v4.3.2 \
-		&& git clone https://github.com/jambonz/freeswitch-modules.git -b 1.0.4 \
-		&& git clone https://github.com/grpc/grpc -b master && cd grpc && git checkout v1.57.0 && cd .. \
+    && git config --global https.postBuffer 524288000 \
+    && git config --global pull.rebase true \
+    && git clone https://github.com/signalwire/freeswitch.git -b v1.10.10 \
+    && git clone https://github.com/warmcat/libwebsockets.git -b v4.3.2 \
+    && git clone https://github.com/switch168/freeswitch_modules.git freeswitch-modules \
+    && git clone https://github.com/grpc/grpc -b master && cd grpc && git checkout v1.57.0 && cd .. \
     && cd freeswitch/libs \
     && git clone https://github.com/freeswitch/spandsp.git && cd spandsp && git checkout 0d2e6ac && cd .. \
     && git clone https://github.com/freeswitch/sofia-sip.git -b master \
     && git clone https://github.com/dpirch/libfvad.git \
     && git clone https://github.com/googleapis/googleapis -b master \
     && cd googleapis && git checkout 29374574304f3356e64423acc9ad059fe43f09b5 && cd .. \
-    && cp -r /usr/local/src/freeswitch-modules/mod_audio_fork /usr/local/src/freeswitch/src/mod/applications/mod_audio_fork \
-    && cp -r /usr/local/src/freeswitch-modules/mod_google_transcribe /usr/local/src/freeswitch/src/mod/applications/mod_google_transcribe \
-    && cp -r /usr/local/src/freeswitch-modules/mod_dialogflow /usr/local/src/freeswitch/src/mod/applications/mod_dialogflow \
+    && cp -r /usr/local/src/freeswitch-modules/modules/mod_audio_fork /usr/local/src/freeswitch/src/mod/applications/mod_audio_fork \
+    && cp -r /usr/local/src/freeswitch-modules/modules/mod_google_transcribe /usr/local/src/freeswitch/src/mod/applications/mod_google_transcribe \
+    && cp -r /usr/local/src/freeswitch-modules/modules/mod_dialogflow /usr/local/src/freeswitch/src/mod/applications/mod_dialogflow \
     && cp /tmp/configure.ac.extra /usr/local/src/freeswitch/configure.ac \
     && cp /tmp/Makefile.am.extra /usr/local/src/freeswitch/Makefile.am \
     && cp /tmp/modules.conf.in.extra /usr/local/src/freeswitch/build/modules.conf.in \
@@ -82,8 +82,8 @@ RUN for i in $(seq 1 8); do mkdir -p "/usr/share/man/man${i}"; done \
     && rm -Rf /usr/local/freeswitch/conf/dialplan/* \
     && rm -Rf /usr/local/freeswitch/conf/sip_profiles/* \
     && cp /usr/local/src/freeswitch/conf/vanilla/autoload_configs/modules.conf.xml /usr/local/freeswitch/conf/autoload_configs \
-		&& sed -i -e 's/global_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8/global_codec_prefs=PCMU,PCMA,OPUS,G722/g' /usr/local/freeswitch/conf/vars.xml \
-		&& sed -i -e 's/outbound_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8/outbound_codec_prefs=PCMU,PCMA,OPUS,G722/g' /usr/local/freeswitch/conf/vars.xml \
+    && sed -i -e 's/global_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8/global_codec_prefs=PCMU,PCMA,OPUS,G722/g' /usr/local/freeswitch/conf/vars.xml \
+    && sed -i -e 's/outbound_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8/outbound_codec_prefs=PCMU,PCMA,OPUS,G722/g' /usr/local/freeswitch/conf/vars.xml \
 
-ONBUILD ADD dialplan /usr/local/freeswitch/conf/dialplan
+    ONBUILD ADD dialplan /usr/local/freeswitch/conf/dialplan
 ONBUILD ADD sip_profiles /usr/local/freeswitch/conf/sip_profiles

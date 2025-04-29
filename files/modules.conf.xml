@@ -1,10 +1,10 @@
 <configuration name="modules.conf" description="Modules">
   <modules>
-    <load module="mod_audio_fork"/>
+    <load module="mod_audio_fork" />
     <!-- Loggers (I'd load these first) -->
-    <load module="mod_console"/>
+    <load module="mod_console" />
     <!-- <load module="mod_graylog2"/> -->
-    <load module="mod_logfile"/>
+    <load module="mod_logfile" />
     <!-- <load module="mod_syslog"/> -->
 
     <!--<load module="mod_yaml"/>-->
@@ -22,10 +22,10 @@
 
     <!-- Event Handlers -->
     <!-- <load module="mod_amqp"/> -->
-    <load module="mod_cdr_csv"/>
+    <load module="mod_cdr_csv" />
     <!-- <load module="mod_cdr_sqlite"/> -->
     <!-- <load module="mod_event_multicast"/> -->
-    <load module="mod_event_socket"/>
+    <load module="mod_event_socket" />
     <!-- <load module="mod_event_zmq"/> -->
     <!-- <load module="mod_zeroconf"/> -->
     <!-- <load module="mod_erlang_event"/> -->
@@ -39,8 +39,8 @@
     <!-- <load module="mod_dingaling"/> -->
     <!-- <load module="mod_portaudio"/> -->
     <!-- <load module="mod_alsa"/> -->
-    <load module="mod_sofia"/>
-    <load module="mod_loopback"/>
+    <load module="mod_sofia" />
+    <load module="mod_loopback" />
     <!-- <load module="mod_woomera"/> -->
     <!-- <load module="mod_freetdm"/> -->
     <!-- <load module="mod_unicall"/> -->
@@ -52,13 +52,13 @@
 
     <!-- Applications -->
     <!-- <load module="mod_signalwire"/> -->
-    <load module="mod_avmd"/>
-    <load module="mod_commands"/>
-    <load module="mod_conference"/>
+    <load module="mod_avmd" />
+    <load module="mod_commands" />
+    <load module="mod_conference" />
     <!-- <load module="mod_curl"/> -->
-    <load module="mod_db"/>
-    <load module="mod_dptools"/>
-    <load module="mod_expr"/>
+    <load module="mod_db" />
+    <load module="mod_dptools" />
+    <load module="mod_expr" />
     <!-- <load module="mod_fifo"/> -->
     <!-- <load module="mod_hash"/> -->
     <!--<load module="mod_mongo"/> -->
@@ -77,7 +77,7 @@
     <!--<load module="mod_sms_flowroute"/>-->
     <!--<load module="mod_smpp"/>-->
     <!--<load module="mod_random"/>-->
-    <load module="mod_httapi"/>
+    <load module="mod_httapi" />
     <!--<load module="mod_translate"/>-->
 
     <!-- SNOM Module -->
@@ -88,7 +88,7 @@
 
     <!-- Dialplan Interfaces -->
     <!-- <load module="mod_dialplan_directory"/> -->
-    <load module="mod_dialplan_xml"/>
+    <load module="mod_dialplan_xml" />
     <!-- <load module="mod_dialplan_asterisk"/> -->
 
     <!-- Codec Interfaces -->
@@ -98,22 +98,22 @@
     <!-- <load module="mod_amr"/> -->
     <!--<load module="mod_ilbc"/>-->
     <!--<load module="mod_h26x"/>-->
-   <!-- <load module="mod_b64"/> -->
+    <!-- <load module="mod_b64"/> -->
     <!--<load module="mod_siren"/>-->
     <!--<load module="mod_isac"/>-->
     <!--<load module="mod_opus"/> -->
 
     <!-- File Format Interfaces -->
     <!--<load module="mod_av"/>-->
-    <load module="mod_sndfile"/>
-    <load module="mod_native_file"/>
+    <load module="mod_sndfile" />
+    <load module="mod_native_file" />
     <!-- <load module="mod_png"/> -->
     <!-- <load module="mod_shell_stream"/> -->
     <!--For icecast/mp3 streams/files-->
     <!--<load module="mod_shout"/>-->
     <!--For local streams (play all the files in a directory)-->
-    <load module="mod_local_stream"/>
-    <load module="mod_tone_stream"/>
+    <load module="mod_local_stream" />
+    <load module="mod_tone_stream" />
 
     <!-- Timers -->
     <!-- <load module="mod_timerfd"/> -->
@@ -134,7 +134,7 @@
     <!-- <load module="mod_rss"/> -->
 
     <!-- Say -->
-   <!-- <load module="mod_say_en"/> -->
+    <!-- <load module="mod_say_en"/> -->
     <!-- <load module="mod_say_ru"/> -->
     <!-- <load module="mod_say_zh"/> -->
     <!-- <load module="mod_say_sv"/> -->
@@ -142,6 +142,5 @@
     <!-- Third party modules -->
     <!--<load module="mod_nibblebill"/>-->
     <!--<load module="mod_callcenter"/>-->
-
   </modules>
 </configuration>
